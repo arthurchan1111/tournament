@@ -46,22 +46,27 @@ Or download the zip file and unzip the file
   $ vagrant ssh
   ```
   Change the directory again to vagrant/*
+
 2. Change the directory into vagrant/tournament/
+
 3. Type in the command:
 
   ```
   $ psql
   ```
+
 4. Type in the following command:
 
   ```
   $ \i tournament.sql
   ```
  Or open up tournament.sql file and copy & paste all the contents in the file. (**Note:** This will delete any database named tournament)
-5. Exit out of the SQL environment using
+
+5. Exit out of the SQL environment using:
   ```
   $ \q
   ```
+
 6. Start the unit tests to see if everything is working with:
   ```
   $ python tournament_test.py
