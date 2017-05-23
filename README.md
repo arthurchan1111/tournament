@@ -4,17 +4,22 @@ A python module along with a database schema to facilitate a swiss tournament st
 ## Relevant Files
 
 **tournament.py**
+
 Contains the python module to facilitate all the necessary events of a swiss tournament match
 
 **tournament.sql**
+
 Contains and creates the database schema for the swiss tournament
 
 **tournament_test.py**
+
 Unit tests for tournament.py
 
 ## Dependencies
-[Python 2.7.X](https://www.python.org/downloads/)
+[Python 2.7.X](https://www.python.org/downloads/)  
+
 [Virtual Box](https://www.virtualbox.org/wiki/Downloads)
+
 [Vagrant](https://www.vagrantup.com/downloads.html)
 
 **Note:** If you don't want to install a virtual machine you will need to download your own version of [PostgreSQL](https://www.postgresql.org/download/)
@@ -40,7 +45,7 @@ Or download the zip file and unzip the file
   ```
   $ vagrant ssh
   ```
-  *Change the directory again to vagrant/ ***
+  *Change the directory again to vagrant/ **
 2. Change the directory into vagrant/tournament/
 3. Type in the command:
 
