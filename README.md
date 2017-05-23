@@ -41,17 +41,18 @@ Or download the zip file and unzip the file
 
     Type in the following command to initiate the virtual machine:
 
-        ```
-        $ vagrant up
-        ```
+      ```
+      $ vagrant up
+      ```
 
     After everything has been setup type in the following command to login to the virtual machine:
 
-        ```
-        $ vagrant ssh
-        ```
+      ```
+      $ vagrant ssh
+      ```
 
     Once logged in change into the vagrant directory to view all the available subdirectories:
+
       ```
       $cd vagrant/
       ```
