@@ -37,7 +37,7 @@ Or download the zip file and unzip the file
 
 **If you downloaded the virtual machine follow these next steps:**
 
-  *Change to the directory vagrant/
+  Change to the directory where Vagrantfile is located (vagrant/)
 
   Type in the following command to initiate the virtual machine:
   ```
@@ -49,7 +49,10 @@ Or download the zip file and unzip the file
   $ vagrant ssh
   ```
 
-  Change the directory again to vagrant/*
+  Once logged in change into the vagrant directory to view all the available subdirectories:
+  ```
+  $cd vagrant/
+  ``` 
 
 2. Change the directory into vagrant/tournament/
 
@@ -64,7 +67,9 @@ Or download the zip file and unzip the file
   ```
   $ \i tournament.sql
   ```
- Or open up tournament.sql file and copy & paste all the contents in the file. (**Note:** This will delete any database named tournament)
+ Or open up tournament.sql file and copy & paste all the contents in the file.
+
+ **Note: This will delete any database named tournament**
 
 5. Exit out of the SQL environment using:
   ```
