@@ -40,11 +40,13 @@ Or download the zip file and unzip the file
     Change to the directory where Vagrantfile is located (vagrant/)
 
     Type in the following command to initiate the virtual machine:
+
         ```
         $ vagrant up
         ```
 
     After everything has been setup type in the following command to login to the virtual machine:
+
         ```
         $ vagrant ssh
         ```
