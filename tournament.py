@@ -37,7 +37,7 @@ def countPlayers():
     results = cursor.fetchall()
     db.commit()
     db.close()
-    return results
+    return results[0][0]
 
 
 def registerPlayer(name):
@@ -51,7 +51,7 @@ def registerPlayer(name):
     """
     db = connect()
     cursor = db.cursor()
-    cursor.execute("INSERT INTO players VALUES (name)")
+    cursor.execute("INSERT INTO players(name) VALUES (%s)", (name,))
     db.commit()
     db.close()
 
@@ -60,6 +60,9 @@ def playerStandings():
     """Returns a list of the players and their win records, sorted by wins.
 
     The first entry in the list should be the player in first place, or a player
+
+    The first entry in the list should be the player
+    in first place, or a player
     tied for first place if there is currently a tie.
 
     Returns:
@@ -71,7 +74,16 @@ def playerStandings():
     """
     db = connect()
     cursor = db.cursor()
-    cursor.execute("SELECT FROM ")
+    # The query gets both views and equi-joins on player id
+    cursor.execute('SELECT win_count.id, win_count.name, wins,'
+                   '(wins + losses) AS Matches_Played ' +
+                   'FROM win_count, loss_count ' +
+                   'WHERE win_count.id = loss_count.id ' +
+                   'ORDER BY wins DESC')
+    results = cursor.fetchall()
+    db.commit()
+    db.close()
+    return results
 
 
 def reportMatch(winner, loser):
@@ -83,7 +95,8 @@ def reportMatch(winner, loser):
     """
     db = connect()
     cursor = db.cursor()
-    cursor.execute("INSERT INTO matches VALUES(winner,loser)")
+    query = "INSERT INTO matches(winner, loser) VALUES( %s, %s)"
+    cursor.execute(query, (winner, loser))
     db.commit()
     db.close()
 
@@ -105,3 +118,18 @@ def swissPairings():
     """
     db = connect()
     cursor = db.cursor()
+    # The query gets both views and equi-joins on player id
+    cursor.execute('SELECT win_count.id, win_count.name ' +
+                   'FROM win_count, loss_count ' +
+                   'WHERE win_count.id = loss_count.id ' +
+                   'ORDER BY wins DESC')
+    results = cursor.fetchall()
+    swissPairList = []
+    # Make a for loop with 2 increments and concatenate the 2 tuples
+    # Source:https://stackoverflow.com/questions/2990121/
+    # how-do-i-loop-through-a-python-list-by-twos
+    for i in xrange(0, len(results), 2):
+        swissPairList.append(results[i] + results[i+1])
+    db.commit()
+    db.close()
+    return swissPairList
