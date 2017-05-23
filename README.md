@@ -36,15 +36,19 @@ Or download the zip file and unzip the file
 1. Open up terminal or cmd and change to the directory where you downloaded this project
 
 **If you downloaded the virtual machine follow these next steps:**
+
   *Change to the directory vagrant/
+
   Type in the following command to initiate the virtual machine:
   ```
   $ vagrant up
   ```
+
   After everything has been setup type in the following command to login to the virtual machine:
   ```
   $ vagrant ssh
   ```
+
   Change the directory again to vagrant/*
 
 2. Change the directory into vagrant/tournament/
