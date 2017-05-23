@@ -71,7 +71,7 @@ Or download the zip file and unzip the file
       $ \i tournament.sql
       ```
 
-    Or open up tournament.sql file and copy & paste all the contents in the file.
+    Or open up tournament.sql file and copy & paste all the contents into the terminal.
 
     **Note: This will delete any database named tournament**
 
